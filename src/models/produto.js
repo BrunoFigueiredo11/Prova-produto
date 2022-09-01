@@ -18,10 +18,15 @@ const schema = new Schema({
         type: Number,
         required: true
     },
-    active :{
-        type: Boolean, 
+    idCategoria :{
+        type: String, 
         required:true, 
-        default:true
+        default:null
+    },
+    categoria :{
+        type: String, 
+        required:true, 
+        default:null
     }
 });
 
