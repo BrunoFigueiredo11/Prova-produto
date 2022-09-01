@@ -1,5 +1,5 @@
 # Prova-produto
- prova sobre api da matéria de microservice and web engineering
+ prova sobre API da matéria de microservice and web engineering
  **************************************************************************************
   * lista produto http://localhost:3000/produto
   * altera produto http://localhost:3000/produto/(digite aqui o id do produto)
