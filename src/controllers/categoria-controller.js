@@ -43,16 +43,3 @@ exports.delete = async (req, res, next) => {
         res.status(404).send({ message: "Erro ao tentar Deletar!" });
     }
 }
-
-exports.getByIdCateg = async (req, res, next) => {
-    try {
-        const id = req.params.id;
-        const data = await repository.getByIdCateg(id);
-        if (data == null) {
-            res.status(404).send();
-        }
-        res.status(200).send(data);
-    } catch (error) {
-        res.status(404).send({ message: "Erro ao pesquisar ID!" });
-    }
-}

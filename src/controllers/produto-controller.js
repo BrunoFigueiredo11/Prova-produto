@@ -5,7 +5,7 @@ const repository = require('../repositories/produto-repository')
 
 exports.get = async (req, res, next) => {
     try {
-        const data = await repository.getCateg();
+        const data = await repository.getProduto();
         res.status(200).send(data);
     } catch (error) {
         res.status(404).send({ message: "Erro ao pesquisar!" });

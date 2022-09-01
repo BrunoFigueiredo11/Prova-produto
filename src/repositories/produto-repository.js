@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
-const Categ = mongoose.model('Produto');
+const Produto = mongoose.model('Produto');
 
 
-exports.getCateg = async () => {
-    const result = await Categ.find({}, 'title _id ');
+exports.getProduto = async () => {
+    const result = await Produto.find({}, 'title _id price');
 
     return result;
 }
 
 exports.create = async (data) => {
-    let categoria = Categ(data);
-    await categoria.save();
+    let produto = Produto(data);
+    await produto.save();
 }
 
 exports.put = async (id, data) => {
-    await Categ.findByIdAndUpdate(id, {
+    await Produto.findByIdAndUpdate(id, {
         $set: {
             title: data.title,
             description: data.description,
@@ -25,5 +25,5 @@ exports.put = async (id, data) => {
 }
 
 exports.delete = async (id) => {
-    await Categ.findByIdAndDelete(id);
+    await Produto.findByIdAndDelete(id);
 }

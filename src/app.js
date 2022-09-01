@@ -18,13 +18,16 @@ app.use(function (req, res, next){
 
 //registrar a model
 require('./models/categoria');
+require('./models/produto');
 
 //registrar a roda
 const categRouter = require('./routes/categoria-route');
+const produtoRouter = require('./routes/produto-route');
 const index = require('./routes/index')
 
 app.use('/', index);
 app.use('/categoria', categRouter);
+app.use('/produto', produtoRouter);
 
 module.exports = app
 
