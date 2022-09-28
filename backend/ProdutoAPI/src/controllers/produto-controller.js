@@ -1,5 +1,5 @@
-const { response } = require('express');
 const fetch = require('node-fetch');
+
 const mongoose = require('mongoose');
 const repository = require('../repositories/produto-repository')
 
@@ -17,8 +17,7 @@ exports.post = async (req, res, next) => {
     try {
         await repository.create(req.body);
         res.status(201).send({ message: "Criado com sucesso!" });
-        enviarEmail(req.body).then((data) => {
-            console.log(data);
+        enviarEmail(req).then((data) => {
         })
 
     } catch (error) {
@@ -31,7 +30,7 @@ async function enviarEmail(req) {
         "emailFrom": "brunofigueiredo1120@gmail.com",
         "emailTo": "brunofigueiredo1120@gmail.com",
         "subject": "Produto Cadastrado",
-        "text": "Este email foi enviado a partir da API de produto" + req
+        "text": "Este email foi enviado a partir da API de produto" + req.body.text()
     }
     const response = await fetch('http://localhost:8080/send-email', {
         method: 'POST',
