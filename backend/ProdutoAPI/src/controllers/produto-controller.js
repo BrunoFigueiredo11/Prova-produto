@@ -34,6 +34,7 @@ async function enviarEmail(req) {
         "subject": "Produto Cadastrado",
         "text": "Este email foi enviado a partir da API de produto" + req.body.text
     }
+    console.log(req.body.text)
     const response = await fetch('http://localhost:8080/send-email', {
         method: 'POST',
 
