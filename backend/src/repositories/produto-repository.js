@@ -4,7 +4,7 @@ const Categ = mongoose.model('Categoria');
 
 
 exports.getProduto = async () => {
-    const result = await Produto.find({}, 'title _id price categoria');
+    const result = await Produto.find({}, 'title _id price categoria description');
     return result;
 }
 
