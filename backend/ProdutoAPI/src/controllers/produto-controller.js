@@ -17,6 +17,7 @@ exports.post = async (req, res, next) => {
     try {
         await repository.create(req.body);
         res.status(201).send({ message: "Criado com sucesso!" });
+       
         enviarEmail(req).then((data) => {
         })
 
@@ -25,12 +26,13 @@ exports.post = async (req, res, next) => {
     }
 }
 
+
 async function enviarEmail(req) {
     data = {
         "emailFrom": "brunofigueiredo1120@gmail.com",
         "emailTo": "brunofigueiredo1120@gmail.com",
         "subject": "Produto Cadastrado",
-        "text": "Este email foi enviado a partir da API de produto" + req.body.text()
+        "text": "Este email foi enviado a partir da API de produto" + req.body.text
     }
     const response = await fetch('http://localhost:8080/send-email', {
         method: 'POST',
