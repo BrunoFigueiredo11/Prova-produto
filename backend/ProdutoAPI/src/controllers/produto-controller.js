@@ -1,5 +1,5 @@
 const { response } = require('express');
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
 const mongoose = require('mongoose');
 const repository = require('../repositories/produto-repository')
 
