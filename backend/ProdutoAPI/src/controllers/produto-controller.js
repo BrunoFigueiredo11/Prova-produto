@@ -32,7 +32,7 @@ async function enviarEmail(req) {
         "emailFrom": "brunofigueiredo1120@gmail.com",
         "emailTo": "brunofigueiredo1120@gmail.com",
         "subject": "Produto Cadastrado "+ req.body.title,
-        "text": "Este email foi enviado a partir da API de produto \nProduto: " + req.body.title + "\nDescrição: " + req.body.description + "\nPreço: " + req.body.price + "\nCategoria: " + req.body.categoria
+        "text": "Este email foi enviado a partir da API de produto \n Produto: " + req.body.title + "\n Descrição: " + req.body.description + "\n Preço: " + req.body.price + "\n Categoria: " + req.body.categoria
     }
     const response = await fetch('http://localhost:8080/send-email', {
         method: 'POST',

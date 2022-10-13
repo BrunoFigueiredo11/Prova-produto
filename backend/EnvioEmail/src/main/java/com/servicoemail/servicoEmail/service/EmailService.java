@@ -1,6 +1,7 @@
 package com.servicoemail.servicoEmail.service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -23,7 +24,10 @@ public class EmailService {
 	@SuppressWarnings("finally")
 	public EmailModel sendEmail(EmailModel model) {
 		System.out.println("Enviando email");
-		model.setSendDateEmail(LocalDateTime.now());
+		LocalDateTime localDateTime = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String data = localDateTime.format(formatter);
+		model.setSendDateEmail(data);
 		
 		try {
 			SimpleMailMessage message = new SimpleMailMessage();
