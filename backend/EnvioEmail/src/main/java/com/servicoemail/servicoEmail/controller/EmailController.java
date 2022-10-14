@@ -40,6 +40,7 @@ public class EmailController {
 		mm = dd.substring(4,6);
 		yyyy = dd.substring(5);
 		dd = dd.substring(7);
+		System.out.println(dd+"/"+mm+"/"+yyyy);
 		return emailRepository.findAllDate(dd,mm,yyyy);
 	}
 	@GetMapping("/listEmail")
