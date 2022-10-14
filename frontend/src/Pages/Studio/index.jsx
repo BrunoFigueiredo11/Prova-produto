@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
-import api from "../../Services/api";
+import api from "../../Services/api-product";
 
 import "./style.css";
 
@@ -35,10 +35,8 @@ export default function Studio() {
         let id
 
         currencies.map((item) => {
-            console.log(item.label)
             if (item.label === category) {
                 id = item.value
-                console.log(id)
             }
             return id
         })
@@ -61,7 +59,6 @@ export default function Studio() {
     useEffect(() => {
         api.get("/categoria").then((response) => {
             let data = response.data
-            console.log(data)
             setCurrencies(data.map((item) => {
                 return {
                     value: item._id,

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -16,7 +17,7 @@ const columns = [
 ];
 
 export default function StickyHeadTable({ data }) {
-  console.log(data)
+  let navigate = useNavigate()
   const rows = data
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -28,8 +29,7 @@ export default function StickyHeadTable({ data }) {
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
-  };
-
+  }
 
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ borderRadius: "15px" }}>

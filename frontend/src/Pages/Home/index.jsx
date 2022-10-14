@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../Components/Header";
-import Table from "../../Components/Table";
+import Table from "../../Components/TableProduct";
 import Footer from "../../Components/Footer";
-import api from "../../Services/api";
+import api from "../../Services/api-product";
 
 import "./style.css";
 
 export default function Home() {
     let navigate = useNavigate()
     const [ list, setList ] = useState([])
+
+    const handlePageEmail = async () => {
+        navigate('/infinity/email')
+    }
 
     const handlePageStudio = async () => {
         navigate('/infinity/studio')
@@ -26,6 +30,7 @@ export default function Home() {
             <div className="home-content">
                 <section className="home-panel">
                     <h2>Produtos Cadastrados</h2>
+                    <button onClick={() => handlePageEmail()}>Listar E-mail's</button>
                     <button onClick={() => handlePageStudio()}>Cadastrar Produto</button>
                 </section>
                 <Table data={list} />

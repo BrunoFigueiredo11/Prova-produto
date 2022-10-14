@@ -1,0 +1,44 @@
+#home {
+    height: 100vh;
+}
+
+.email-content {
+    padding: 0rem 10rem;
+    padding-top: 7rem;
+    padding-bottom: 100px;
+    height: 100%;
+}
+
+.email-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+}
+
+.email-panel h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+.input-filter input {
+    border: none;
+    padding: 10px;
+    border: 3px solid #4c4c4c;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+.email-panel button {
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.7rem 3.5rem;
+    background-color: #2caabe;
+    color: #fff;
+}
+
+.email-panel button:hover {
+    background-color: #2a96a7;
+}
