@@ -33,14 +33,13 @@ public class EmailController {
 		emailService.sendEmail(email);
 		return new ResponseEntity<EmailModel>(email, HttpStatus.OK);
 	}
-	@GetMapping("/listEmail/{dd}")
+	@GetMapping("/listEmail/filter/{dd}")
 	public List<EmailModel> listaEmail(@PathVariable String dd){
 		String mm;
 		String yyyy;
-		mm = dd.substring(4,6);
-		yyyy = dd.substring(5);
-		dd = dd.substring(7);
-		System.out.println("\n********************"+dd+"/"+mm+"/"+yyyy+"****************************");
+		mm = dd.substring(5,7);
+		yyyy = dd.substring(0,4);
+		dd = dd.substring(8);
 		return emailRepository.findAllDate(dd,mm,yyyy);
 	}
 	@GetMapping("/listEmail")

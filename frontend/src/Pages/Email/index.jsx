@@ -19,7 +19,7 @@ export default function Email() {
     const handleFilterDate = async () => {
         let dateFilter = document.getElementById('date_filter').value
         console.log(dateFilter);
-        api.get(`/listEmail/${dateFilter}`).then((res) => {
+        api.get(`/listEmail/filter/${dateFilter}`).then((res) => {
             setList(res.data);
             console.log(res.data);
         })
