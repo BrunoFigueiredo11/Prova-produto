@@ -21,8 +21,8 @@ export default function Welcome() {
     return(
         <main id="welcome">
             <div className="welcome-container background">
-                <h2>Backlog de Produtos</h2>
-                <p>Essa aplicação tem por objetivo apresentar as operações simples de back-end através da gestão e criação de Produtos. </p>
+                <h2>Backlog</h2>
+                <p>Essa aplicação tem por objetivo apresentar as operações simples de back-end através da gestão e criação de Produtos e análise de e-mail's</p>
                 <button onClick={() => handlePageHome()}>
                     Avançar
                     <BsArrowRightCircle size={20} style={{ marginLeft: "1rem" }} />
